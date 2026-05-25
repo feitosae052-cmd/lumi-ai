@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Lumi AI</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .chat {
+      width: 400px;
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .messages {
+      height: 300px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      background: #0f172a;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+    }
+
+    button {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="chat">
+  <h2>Lumi AI</h2>
+
+  <div class="messages" id="chat"></div>
+
+  <input id="input" placeholder="Fale com a Lumi...">
+  <button onclick="send()">Enviar</button>
+</div>
+
+<script>
+function send() {
+  let input = document.getElementById("input");
+  let chat = document.getElementById("chat");
+
+  let userText = input.value;
+
+  chat.innerHTML += "<p><b>Você:</b> " + userText + "</p>";
+
+  // resposta fake (depois conectamos a IA real)
+  chat.innerHTML += "<p><b>Lumi:</b> Estou te ouvindo 👍 (ainda em teste)</p>";
+
+  input.value = "";
+}
+</script>
+
+</body>
+</html>
